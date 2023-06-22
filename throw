@@ -1,0 +1,30 @@
+package thread;
+
+public class ThrowDemo {
+	public static void main(String[] args)
+    {
+
+       float a=158.5f,b=0,c,d;
+
+        try
+        {
+            if(b==0)        
+                throw(new ArithmeticException("Can't divide by zero."));
+            
+            else
+            {
+                c = a / b;
+                d = a*b;
+                System.out.print("\n\tThe result c is : " + c);
+                System.out.print("\n\tThe result d is : " + d);
+            }
+        }
+        catch(ArithmeticException Ex)
+        {
+            System.out.print("\n\tError : " + Ex.getMessage());
+        }
+
+        System.out.print("\n\tEnd of program.");
+    }
+
+}

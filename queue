@@ -1,0 +1,26 @@
+package thread;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+
+        // Inserting elements to the queue
+        queue.offer("Alice");
+        queue.offer("Bob");
+        queue.offer("Charlie");
+
+        System.out.println("Queue elements: " + queue);
+
+        // Removing elements from the queue
+        String removedElement = queue.poll();
+        System.out.println("Removed element: " + removedElement);
+        System.out.println("Updated queue elements: " + queue);
+
+        // Inserting a new element to the queue
+        queue.offer("Dave");
+        System.out.println("Updated queue elements: " + queue);
+    }
+}

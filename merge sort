@@ -1,56 +1,70 @@
-import java.util.Arrays;
+package sortingandsearching;
 
-public class MergeTwoSortArray {
+public class MergeSort {
 
-	 void print(int[] arr){
-         for(int i=0;i<arr.length;i++){
-             System.out.print(arr[i]+" ");
-         }
-         System.out.println();
-     }
-     int[] merge(int arr1[],int arr2[],int n,int m){
-         int[] result=new int[n+m];
-         int i=0;
-         int j=0;
-         int k=0;
-         while(i<n && j<m){
-             if(arr1[i]<arr2[j]){
-                 result[k]=arr1[i];
-                 i++;
-             }
-             else if(arr1[i]>arr2[j]){
-                 result[k]=arr2[j];
-                 j++;
-             }
-             else{
-            	 result[k]=arr1[i];
-            	 i++;
-            	 j++;
-             }
-             k++;
-         }
-         while(i<n){
-             result[k]=arr1[i];
-             i++;k++;
-         }
-         while(j<m){
-             result[k]=arr2[j];
-             j++;k++;
-         }
-         return result;
-     }
-     
-     public static void main(String []args){
-         MergeTwoSortArray msa=new MergeTwoSortArray();
-         int[] arr1={0,1,8,10};
-         int[] arr2={2,4,11,15,20};
-         Arrays.sort(arr1);
-         Arrays.sort(arr2);
-         msa.print(arr1);
-         msa.print(arr2);
-         int[] result=msa.merge(arr1,arr2,arr1.length,arr2.length);
-         msa.print(result);
-         
-         
-     }
+		static void mergeSort(int a[],int beg, int end) {
+			if(beg<end) {
+				int mid=(beg+end)/2;
+				mergeSort(a,beg,mid);
+				mergeSort(a,mid+1,end);
+				merge(a,beg,mid,end);
+			}
+		}
+	private static void merge(int[] a, int beg, int mid, int end) {
+			
+			 int i,j,k;
+			 int n1=mid-beg+1;
+			 int n2=end-mid;
+			 //temporary arrays
+			 int LeftArray[]=new int[n1];
+			 int RightArray[]=new int[n2];
+			 //copy data to temp arrays
+			 for(i=0;i<n1;i++)
+				 LeftArray[i]=a[beg+i];
+			 for(j=0;j<n1;j++)
+				 RightArray[j]=a[mid+1+j];
+			 i=0;j=0;k=beg;
+			 
+			 while(i<n1 && j<n2) {
+				 if(LeftArray[i]<=RightArray[j]) {
+					 a[k]=LeftArray[i];
+					 i++;
+				 }
+				 else
+					 {
+						 a[k]=RightArray[j];
+						 j++;
+					 }
+				 k++;
+			 }
+			 while(i<n1) {
+				 a[k]=LeftArray[i];
+				 i++;
+				k++;
+			 }
+			 while(j<n2) {
+				 a[k]=RightArray[j];
+				 j++;
+				k++;
+			 }
+			 	
+		}
+	public static void main(String[] args) {
+		int a[]= {11,30,24,7,31,16,39,41};
+		
+		System.out.println("Before Sort");
+		print(a);
+		mergeSort(a,0,a.length-1);
+		System.out.println("After Sort");
+		print(a);
+		
+
+	}
+	private static void print(int[] a) {
+		for(int i=0;i<a.length;i++)
+			System.out.print(a[i]+" ");
+		
+	}
+
 }
+            	 

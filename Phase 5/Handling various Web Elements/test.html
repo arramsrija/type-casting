@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Hello</title>
+<script>
+function myDblClickFunction() {
+document.getElementById("demo-messages").textContent = "You double clicked me!";
+document.getElementById("demo-messages").style.color = "red";
+}
+function mySglClickFunction() {
+document.getElementById("demo-messages").textContent = "You single clicked me!";
+document.getElementById("demo-messages").style.color = "blue";
+}
+</script>
+</head>
+<bodybgcolor="#ffeeee">
+DEMO-MESSAGES:
+<spanid="demo-messages">GETTING STARTED</span>
+<br><br><spanid="xyz">Hello world!</span>
+Alerts The simplest of these is referred to as an alert, which shows a
+custom message, and a single button which dismisses the alert, labelled
+in most browsers as OK. It can also be dismissed in most browsers by
+pressing the close button, but this will always do the same thing as
+the OK button.
+<ahref="javascript:alert('hello alerts!')">See an example alert</a>
+<br>
+<br>
+<divid="modal">
+<iframeid="myframe"name="myframe"
+src="https://seleniumhq.github.io"width=1200height=400>
+</iframe>
+</div>
+<br>
+<br>
+<buttonid="dblButton"ondblclick="myDblClickFunction()"
+onclick="mySglClickFunction()">Double-click me or Single click me</button>
+<h3>0 Some h3 text</h3>
+<form>
+<inputtype="text"id="admin"><br><inputtype="text"
+id="admin123"><br><inputtype="text"id="adminxyz">
+<br><inputtype="text"id="adm"><br>
+<inputtype="file"id="uploadPicture">
+</form>
+<h3>1 Some h3 text</h3>
+<h3>2 Some h3 text</h3>
+<h3>3 Some h3 text</h3>
+<selectmultiplearia-label="Month"name="birthday_month"id="month"
+title="Month"class="_9407 _5dba _9hk6 _8esg">
+<option
+value="1">Jan</option>
+<optionvalue="2">Feb</option>
+<optionvalue="3">Mar</option>
+<optionvalue="4">Apr</option>
+<optionvalue="5">May</option>
+<optionvalue="6">Jun</option>
+<optionvalue="7"selected="1">Jul</option>
+<optionvalue="8">Aug</option>
+<optionvalue="9">Sep</option>
+<optionvalue="10">Oct</option>
+<optionvalue="11">Nov</option>
+<optionvalue="12">Dec</option>
+</select>
+</body>
+</html>

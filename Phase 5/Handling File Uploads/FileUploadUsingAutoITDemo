@@ -1,0 +1,24 @@
+package com.ecommerce.test;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+@SuppressWarnings("unused")
+publicclassFileUploadUsingAutoITDemo {
+publicstaticvoid main(String[] args) throws InterruptedException, IOException {
+WebDriver driver = new ChromeDriver(); // new FirefoxDriver();
+demoFileUpload(driver);
+driver.close();
+}
+@SuppressWarnings("deprecation")
+staticvoid demoFileUpload(WebDriver driver) throws InterruptedException, IOException {
+String baseUrl = "File:///C:\\Users\\lenovo\\Phase5\\hello-selenium\\src\\main\\resources\\test.html";
+driver.get(baseUrl);
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+driver.get("https://demoqa.com/automation-practice-form");
+driver.findElement(By.id("uploadPicture")).click();
+Runtime.getRuntime().exec("F:\\tmp\\Phase5Test.exe");
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+}
+}
